@@ -1,7 +1,7 @@
 body {
     font-size: 1em;
-    background-color: #997a00;
-    color: white;
+    background-color:#ffd9b3;
+    color: black;
     margin: auto;
     
 }
@@ -19,7 +19,7 @@ main {
 }
 
 header {
-    background-color: #00664d;
+    background-color: #006666;
     text-align: right;
     padding: 1em;
 }
@@ -35,7 +35,8 @@ a:hover {
 }
 
 footer {
-    background-color: #00664d;
+    background-color: #006666;
     text-align: center;
     padding: 0.2em;
+    color: white;
 }
