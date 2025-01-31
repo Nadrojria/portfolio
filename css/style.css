@@ -1,9 +1,9 @@
 body {
     font-size: 1em;
-    background-color:#ffd9b3;
+    /*background-color:#ffd9b3;*/
+    background-color: #ff9966;
     color: black;
     margin: auto;
-    
 }
 
 .container {
@@ -19,14 +19,16 @@ main {
 }
 
 header {
-    background-color: #006666;
+    /*background-color: #006666;*/
+    background-color: #b3f0ff;
     text-align: right;
     padding: 1em;
+    border-bottom: solid;
 }
 
 header a {
     text-decoration: none;
-    color: white;
+    color: black;
     padding: 1em;
 }
 
@@ -35,8 +37,46 @@ a:hover {
 }
 
 footer {
-    background-color: #006666;
+    background-color: #b3f0ff;
+    border-top: solid;
     text-align: center;
     padding: 0.2em;
-    color: white;
+    color: black;
+}
+
+footer img {
+    width: 2em;
+}
+
+.form_container {
+    border-radius: 10px;
+    background-color: #ffccb3;
+    padding: 0 1em 1em;
+    box-shadow: 10px 7px rgba(0,0,0,0.5);
+}
+
+label {
+    display: block; /*pour que les labels se séparent et s'alignent sur la gauche*/
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%; /*taille de l'élément sur la page*/
+    margin-top: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color:orange;
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
 }
