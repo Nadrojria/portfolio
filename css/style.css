@@ -12,6 +12,10 @@ body {
     min-height: 100vh;
 }
 
+p {
+    text-align: justify; /*aligne le texte sur les 2 cotés*/
+}
+
 main {
     flex: 1;
     overflow: auto;
