@@ -80,3 +80,5 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
+
+/*pour réduire les labels et éviter qu'il prennent toutes la page, utiliser width à 50% par exmeple*/
