@@ -43,13 +43,12 @@ a:hover {
 footer {
     background-color: #b3f0ff;
     border-top: solid;
-    text-align: center;
     padding: 0.2em;
     color: black;
 }
 
 footer img {
-    width: 2em;
+    width: 1.5em;
 }
 
 .form_container {
