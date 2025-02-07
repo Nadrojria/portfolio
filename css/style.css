@@ -45,6 +45,8 @@ footer {
     border-top: solid;
     padding: 0.2em;
     color: black;
+    display: flex;
+    justify-content: center;
 }
 
 footer img {
