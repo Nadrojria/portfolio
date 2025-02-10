@@ -1,8 +1,10 @@
 body {
     font-size: 1em;
+    font-family: 'Poppins', sans-serif;
     /*background-color:#ffd9b3;*/
-    background-color: #ff9966;
-    color: black;
+    /*background-color: #ff9966;*/
+    background-color: #ffbb99 ;
+    color: #292929;
     margin: auto;
 }
 
@@ -22,6 +24,10 @@ main {
     padding: 1em;
 }
 
+
+/************HEADER and FOOTER*****************
+***********************************************/
+
 header {
     /*background-color: #006666;*/
     background-color: #b3f0ff;
@@ -32,7 +38,7 @@ header {
 
 header a {
     text-decoration: none;
-    color: black;
+    color: #292929;
     padding: 1em;
 }
 
@@ -44,7 +50,7 @@ footer {
     background-color: #b3f0ff;
     border-top: solid;
     padding: 0.2em;
-    color: black;
+    color: #292929;
     display: flex;
     justify-content: center;
 }
@@ -53,24 +59,44 @@ footer img {
     width: 1.5em;
 }
 
+/***********PROJETS*********************
+********************************/
+
+.project {
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/************FORMULAIRE************
+***********************************/
+.contactMe {
+    text-align: center;
+}
+
 .form_container {
-    border-radius: 10px;
-    background-color: #ffccb3;
-    padding: 0 1em 1em;
-    box-shadow: 10px 7px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    padding: 0.1em 1em 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 10px auto;
 }
 
 label {
     display: block; /*pour que les labels se séparent et s'alignent sur la gauche*/
-    text-align: left;
     margin-top: 10px;
     font-weight: bold;
 }
 
-input, textarea {
+form input, form textarea {
     width: 100%; /*taille de l'élément sur la page*/
     margin-top: 5px;
-    border: 1px solid grey;
+    border: 1px solid #292929;
     border-radius: 5px;
 }
 
@@ -80,10 +106,14 @@ button {
     padding: 10px;
     background-color:orange;
     border: none;
-    color: black;
+    color: #292929;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #ff8000;
 }
 
 /*pour réduire les labels et éviter qu'il prennent toutes la page, utiliser width à 50% par exmeple*/
