@@ -116,4 +116,23 @@ form button:hover {
     background-color: #ff8000;
 }
 
+.projects a {
+    text-decoration: none;
+    color: #292929;
+}
+
+.project {
+    transition: transform 0.4s;
+}
+.project:hover {
+    transform: scale(1.1);
+}
+
+.linkedinLink {
+    text-decoration: none;
+    color: #292929;
+}
+
+
+
 /*pour réduire les labels et éviter qu'il prennent toutes la page, utiliser width à 50% par exmeple*/

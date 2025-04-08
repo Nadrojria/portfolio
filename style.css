@@ -1,0 +1,290 @@
+/*******FONTS********
+**********************/
+.gloria-hallelujah-regular {
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/******BODY*********
+*******************/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Assure que le body prend 100% de la hauteur de l'écran */
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+body {
+    background-color:#b0dfdf;
+    font-family: "Gloria Hallelujah", cursive;
+    height: 100%;
+    overflow: auto;
+    scroll-snap-type: y mandatory; /* Permet le snap vertical */
+    scroll-behavior: smooth; /* Défilement fluide */
+}
+
+
+/*****MENU BURGER****
+**********************/
+.burger-menu {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 10; /* Assure que le menu est au-dessus des autres éléments */
+}
+
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+
+/********PAGES*******
+*********************/
+.page1, .page2 {
+    height: 100vh; /* Chaque page prend toute la hauteur de l'écran */
+    scroll-snap-align: start; /* Le snap commence ici */
+}
+
+
+/*****PAGE 1******
+*****************/
+.page1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b0dfdf;
+}
+
+.intro-page {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centre le texte et l'image verticalement */
+    gap: 100px; /* Espacement entre le texte et l'image */
+    max-width: 90%; /* Évite que le contenu s'étale trop */
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/****MESSAGE*****/
+h1 {
+    font-size: 3rem;
+    text-align: left;
+    max-width: 400px;
+    word-wrap: break-word;
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid rgb(255, 149, 0);
+    animation: 
+        typing 3s steps(40, end) forwards,
+        blink 0.75s step-end 3s 2,
+        remove-cursor 0s linear 4.5s forwards;
+}
+
+@keyframes typing { /* Animation de "typing" */
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {/* Curseur clignotant */
+    0%, 100% { border-color: transparent }
+    50% { border-color: rgb(255, 149, 0) }
+}
+
+@keyframes remove-cursor {
+    to { border-right: none; }
+}
+
+/*****PHOTO*****/
+img {
+    max-width: 350px; /* Taille fixe pour éviter la déformation */
+    width: 100%;
+    height: auto; /* Garde les proportions */
+    border-radius: 50%;
+    border: 6px solid rgb(255, 149, 0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
+}
+
+.bounce-in {
+    animation: bounceIn 3s ease-out forwards;
+    position: relative;
+}
+
+@keyframes bounceIn {
+    0% {
+        top: -1000px;
+        opacity: 0;
+    }
+    50% {
+        top: 0;
+        opacity: 1;
+    }
+    65% {
+        top: -100px;
+    }
+    75% {
+        top: 0;
+    }
+    85% {
+        top: -40px;
+    }
+    90% {
+        top: 0;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+
+/********PAGE 2********
+***********************/
+.page2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #b0dfdf;
+    height: 100vh; /* Assure que la page occupe toute la hauteur de l'écran */
+}
+
+.left-column {
+    width: 45%; /* Donne 45% de largeur à la colonne gauche */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espace entre les éléments */
+    margin-left: 20px;
+}
+
+.left-column h1 {
+    font-size: 3.5rem;
+    text-align: left;
+    color: #333;
+    word-wrap: break-word;
+}
+
+.left-column p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.right-column {
+    width: 45%; /* Donne 45% de largeur à la colonne droite */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espace entre les éléments */
+    margin-right: 20px;
+}
+
+.right-column h4 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espace entre les boîtes */
+    margin-bottom: 20px; /* Marge sous les boîtes */
+}
+
+.skill-box {
+    flex-grow: 1; /* Chaque boîte prend une largeur égale */
+    height: 60px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.right-column p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Pour les tablettes et grands smartphones */
+    .intro-page {
+        flex-direction: column;
+        gap: 50px; /* Réduit l'espacement entre le texte et l'image */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Réduit la taille du texte */
+        text-align: center;
+    }
+
+    img {
+        max-width: 300px; /* Réduit la taille de l'image */
+    }
+
+    .page1, .page2 {
+        padding: 20px;
+    }
+
+    /* Menu Burger */
+    .burger-menu {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Pour les smartphones */
+    h1 {
+        font-size: 2rem; /* Encore plus petit pour les petits écrans */
+    }
+
+    .intro-page {
+        gap: 30px; /* Moins d'écart */
+    }
+
+    img {
+        max-width: 250px; /* Taille de l'image plus petite sur les très petits écrans */
+    }
+
+    .bounce-in {
+        animation: bounceIn 2s ease-out forwards; /* Accélère l'animation sur petit écran */
+    }
+
+    /* Menu Burger */
+    .burger-menu {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 20px;
+    }
+}
+
+
