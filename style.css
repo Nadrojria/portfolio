@@ -6,6 +6,13 @@
     font-style: normal;
 }
 
+.patrick-hand-regular {
+    font-family: "Patrick Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+
 
 /******BODY*********
 *******************/
@@ -19,8 +26,6 @@ html, body {
 body {
     background-color:#b0dfdf;
     font-family: "Gloria Hallelujah", cursive;
-    height: 100%;
-    overflow: auto;
     scroll-snap-type: y mandatory; /* Permet le snap vertical */
     scroll-behavior: smooth; /* Défilement fluide */
 }
@@ -28,33 +33,30 @@ body {
 
 /*****MENU BURGER****
 **********************/
-.burger-menu {
+.basketball-menu {
     position: absolute;
     top: 20px;
-    right: 30px;
-    width: 40px;
-    height: 30px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border: none;
+    z-index: 10;
     cursor: pointer;
-    z-index: 10; /* Assure que le menu est au-dessus des autres éléments */
 }
 
-.burger-menu span {
-    display: block;
-    width: 100%;
-    height: 5px;
-    background-color: black;
-    border-radius: 5px;
+a .basketball-menu:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
 }
 
 
 /********PAGES*******
 *********************/
-.page1, .page2 {
-    height: 100vh; /* Chaque page prend toute la hauteur de l'écran */
+.page1, .page2, .page3, .page4, .page_globe {
+    min-height: 100vh; /* Chaque page prend toute la hauteur de l'écran */
     scroll-snap-align: start; /* Le snap commence ici */
+    box-sizing: border-box;
 }
 
 
@@ -157,11 +159,11 @@ img {
 ***********************/
 .page2 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
     background-color: #b0dfdf;
-    height: 100vh; /* Assure que la page occupe toute la hauteur de l'écran */
 }
 
 .left-column {
@@ -170,18 +172,20 @@ img {
     flex-direction: column;
     gap: 20px; /* Espace entre les éléments */
     margin-left: 20px;
+    align-items: center;
 }
 
 .left-column h1 {
     font-size: 3.5rem;
     text-align: left;
-    color: #333;
+    color: #1d1d1d;
     word-wrap: break-word;
 }
 
 .left-column p {
-    font-size: 1.2rem;
-    color: #555;
+    font-family: "Patrick Hand", cursive;
+    font-size: 1.3rem;
+    color: #333333;
     line-height: 1.6;
 }
 
@@ -189,50 +193,216 @@ img {
     width: 45%; /* Donne 45% de largeur à la colonne droite */
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espace entre les éléments */
+    /*gap: 20px;  Espace entre les éléments */
     margin-right: 20px;
 }
 
 .right-column h4 {
     font-size: 1.6rem;
     font-weight: bold;
-    color: #333;
+    color: #1a1a1a;
 }
 
 .skills-container {
     display: flex;
     justify-content: space-between;
     gap: 20px; /* Espace entre les boîtes */
-    margin-bottom: 20px; /* Marge sous les boîtes */
+    margin-bottom: 10px; /* Marge sous les boîtes */
 }
 
 .skill-box {
+    font-family: "Patrick Hand", cursive;
+    font-size: 1.2rem;
+    color: #333333;
     flex-grow: 1; /* Chaque boîte prend une largeur égale */
-    height: 60px;
+    height: 150px;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 8px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    color: #333;
 }
 
 .right-column p {
-    font-size: 1.1rem;
-    color: #555;
+    font-family: "Patrick Hand", cursive;
+    font-size: 1.2rem;
+    margin-top: -20px;
+    color: #333333;
     line-height: 1.6;
 }
 
 
+/******PAGE 3*******
+*********************/
+.page3 {
+    background-color: #b0dfdf;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-y: auto;
+    justify-content: center;
+}
+  
+.page3-title {
+    font-size: 3.5rem;
+    color: #1d1d1d;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+  
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+  
+.project-card {
+    background: none;
+    border: none;
+    padding: 0;
+    perspective: 1000px;
+    width: 100%;
+    height: 350px;
+}
+  
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+  
+.project-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+  
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-sizing: border-box;
+}
 
+.card-front p, .card-back p {
+    font-family: "Patrick Hand", cursive;
+}
+  
+.card-back {
+    transform: rotateY(180deg);
+}
+  
+.card-back a {
+    text-decoration: none;
+    color: rgb(255, 149, 0);
+    font-weight: bold;
+}
 
+/******PAGE 4********
+*********************/
+.page4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b0dfdf;
+    flex-wrap: wrap;
+}
+  
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    text-align: center;
+    padding-left: 10em;
+}
+  
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.7rem;
+}
+  
+.contact-item a {
+    font-family: "Patrick Hand", cursive;
+    color: #000;
+    text-decoration: none;
+}
+  
+.contact-item a:hover {
+    text-decoration: underline;
+}
+  
+.icon {
+    width: 50px;
+    height: 50px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
+}
+  
+.contact-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+  
+.contact-right h1 {
+    color: #1d1d1d;
+    font-size: 3.5rem;
+    max-width: 300px;
+}
+  
 
+ 
 
-/* Media Queries */
+/* Responsive */
+@media (min-width: 1200px) {
+    .projects-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1199px) { /* Sur les écrans moyens, 2 cartes par ligne */
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     /* Pour les tablettes et grands smartphones */
+    .burger-menu {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 25px;
+    }
+
     .intro-page {
         flex-direction: column;
         gap: 50px; /* Réduit l'espacement entre le texte et l'image */
@@ -251,12 +421,18 @@ img {
         padding: 20px;
     }
 
-    /* Menu Burger */
-    .burger-menu {
-        top: 15px;
-        right: 15px;
-        width: 35px;
-        height: 25px;
+    .left-column,
+    .right-column {
+        width: 100%;
+        margin: 0;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .skill-box {
+        width: 100%;
     }
 }
 

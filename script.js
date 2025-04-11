@@ -1,8 +1,10 @@
-const globe = document.querySelector('#globeId');
+const globe = document.getElementById('globeId');
 
 const myGlobe = new Globe(globe)
   .globeImageUrl("basketball_sph.png")
-  .backgroundColor("rgb(189, 240, 240)")
-  //.backgroundImageUrl("test.avif");
+  .backgroundColor("#b0dfdf")
 
 myGlobe.controls().autoRotate = true;
+myGlobe.controls().enableZoom = false;
+myGlobe.controls().autoRotateSpeed = 2.3;
+    
