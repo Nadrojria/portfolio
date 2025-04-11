@@ -1,7 +1,7 @@
 const globe = document.getElementById('globeId');
 
 const myGlobe = new Globe(globe)
-  .globeImageUrl("basketball_sph.png")
+  .globeImageUrl("./images/basketball_sph.png")
   .backgroundColor("#b0dfdf")
 
 myGlobe.controls().autoRotate = true;
