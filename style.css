@@ -30,8 +30,108 @@ body {
     scroll-behavior: smooth; /* Défilement fluide */
 }
 
+/*****DARK MODE******
+********************/
+/* TRANSITIONS */
+body,
+.page1,
+.page2,
+.page3,
+.page4,
+.card-front,
+.card-back {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
 
-/*****MENU BURGER****
+/* GLOBAL DARK MODE */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+/* PAGE BACKGROUNDS */
+body.dark-mode .page1,
+body.dark-mode .page2,
+body.dark-mode .page3,
+body.dark-mode .page4 {
+  background-color: #121212;
+}
+
+/* TITLES AND TEXT */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h4,
+body.dark-mode p {
+  color: white;
+}
+body.dark-mode .right-column .skills-container p {
+    color: #121212;
+}
+
+/* LINKS */
+body.dark-mode a {
+  color: white;
+}
+body.dark-mode a:hover {
+  color: #ffa53b;
+}
+
+/* BOUTONS DU DOS DES CARTES */
+body.dark-mode .card-back a {
+  background-color: #ffa53b;
+  color: #121212;
+  border: none;
+}
+body.dark-mode .card-back a:hover {
+  background-color: #ffc978;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* CARTES PROJETS */
+body.dark-mode .card-front,
+body.dark-mode .card-back {
+  background-color: #2b2b2b;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+/* ICONES (si besoin) */
+body.dark-mode .icon {
+  filter: brightness(0.85);
+}
+
+/* MENU BASKET */
+body.dark-mode .burger-menu span {
+  background-color: white;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    z-index: 100;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+  
+body.dark-mode .dark-mode-toggle {
+    background-color: #333;
+    color: #fff;
+}
+  
+
+/*****MENU BASKET****
 **********************/
 .basketball-menu {
     position: absolute;
@@ -113,7 +213,7 @@ h1 {
 }
 
 /*****PHOTO*****/
-img {
+.intro-page img {
     max-width: 350px; /* Taille fixe pour éviter la déformation */
     width: 100%;
     height: auto; /* Garde les proportions */
@@ -152,6 +252,14 @@ img {
     100% {
         top: 0;
     }
+}
+
+
+/*****PAGE GLOBE****
+********************/
+.page_globe {
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -203,6 +311,14 @@ img {
     color: #1a1a1a;
 }
 
+.right-column p {
+    font-family: "Patrick Hand", cursive;
+    font-size: 1.2rem;
+    margin-top: -20px;
+    color: #333333;
+    line-height: 1.6;
+}
+
 .skills-container {
     display: flex;
     justify-content: space-between;
@@ -225,20 +341,11 @@ img {
     align-items: center;
 }
 
-.right-column p {
-    font-family: "Patrick Hand", cursive;
-    font-size: 1.2rem;
-    margin-top: -20px;
-    color: #333333;
-    line-height: 1.6;
-}
-
 
 /******PAGE 3*******
 *********************/
 .page3 {
     background-color: #b0dfdf;
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -250,7 +357,6 @@ img {
 .page3-title {
     font-size: 3.5rem;
     color: #1d1d1d;
-    margin-bottom: 2rem;
     text-align: center;
 }
   
@@ -307,36 +413,62 @@ img {
 .card-front p, .card-back p {
     font-family: "Patrick Hand", cursive;
 }
+
+.project-img {
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
   
 .card-back {
     transform: rotateY(180deg);
 }
-  
+
+
 .card-back a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0.5rem 0.3rem;
+    font-family: "Patrick Hand", cursive;
+    font-size: 1rem;
+    color: white;
+    background-color: #1d1d1d;
+    border: none;
+    border-radius: 0.75rem;
     text-decoration: none;
-    color: rgb(255, 149, 0);
-    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+    
+.card-back a:hover {
+    background-color: rgb(255, 174, 60);
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    color: #1d1d1d;
 }
 
 /******PAGE 4********
 *********************/
 .page4 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centrer les deux colonnes */
     align-items: center;
     background-color: #b0dfdf;
     flex-wrap: wrap;
+    gap: 6rem; /* Ajoute un espace raisonnable entre les colonnes */
+    padding: 2rem;
 }
-  
+
 .contact-left {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     justify-content: center;
     align-items: flex-start;
-    flex: 1;
     text-align: center;
-    padding-left: 10em;
 }
   
 .contact-item {
@@ -357,18 +489,18 @@ img {
 }
   
 .icon {
+    border-radius: 50%;
     width: 50px;
     height: 50px;
     border: none;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
 }
-  
+
 .contact-right {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
     text-align: center;
 }
   
@@ -377,11 +509,11 @@ img {
     font-size: 3.5rem;
     max-width: 300px;
 }
-  
 
- 
 
-/* Responsive */
+
+/*****Responsive******
+*********************/
 @media (min-width: 1200px) {
     .projects-container {
         grid-template-columns: repeat(4, 1fr);
@@ -462,5 +594,10 @@ img {
         height: 20px;
     }
 }
+
+
+
+
+
 
 
