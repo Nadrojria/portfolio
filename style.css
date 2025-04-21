@@ -13,21 +13,20 @@
 }
   
 
-
 /******BODY*********
 *******************/
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Assure que le body prend 100% de la hauteur de l'écran */
-    overflow-x: hidden; /* Empêche le défilement horizontal */
+    height: 100%; 
+    overflow-x: hidden;
 }
 
 body {
     background-color:#b0dfdf;
     font-family: "Gloria Hallelujah", cursive;
-    scroll-snap-type: y mandatory; /* Permet le snap vertical */
-    scroll-behavior: smooth; /* Défilement fluide */
+    scroll-snap-type: y mandatory; 
+    scroll-behavior: smooth;
 }
 
 /*****DARK MODE******
@@ -45,7 +44,7 @@ body,
 
 /* GLOBAL DARK MODE */
 body.dark-mode {
-  background-color: #121212;
+  background-color: #303030;
   color: white;
 }
 
@@ -54,7 +53,7 @@ body.dark-mode .page1,
 body.dark-mode .page2,
 body.dark-mode .page3,
 body.dark-mode .page4 {
-  background-color: #121212;
+  background-color: #303030;
 }
 
 /* TITLES AND TEXT */
@@ -104,7 +103,6 @@ body.dark-mode .icon {
 body.dark-mode .burger-menu span {
   background-color: white;
 }
-
 .dark-mode-toggle {
     position: fixed;
     top: 20px;
@@ -120,11 +118,9 @@ body.dark-mode .burger-menu span {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
-
 .dark-mode-toggle:hover {
     transform: scale(1.1);
 }
-  
 body.dark-mode .dark-mode-toggle {
     background-color: #333;
     color: #fff;
@@ -154,8 +150,8 @@ a .basketball-menu:hover {
 /********PAGES*******
 *********************/
 .page1, .page2, .page3, .page4, .page_globe {
-    min-height: 100vh; /* Chaque page prend toute la hauteur de l'écran */
-    scroll-snap-align: start; /* Le snap commence ici */
+    min-height: 100vh; 
+    scroll-snap-align: start;
     box-sizing: border-box;
 }
 
@@ -172,9 +168,9 @@ a .basketball-menu:hover {
 .intro-page {
     display: flex;
     justify-content: center;
-    align-items: center; /* Centre le texte et l'image verticalement */
-    gap: 100px; /* Espacement entre le texte et l'image */
-    max-width: 90%; /* Évite que le contenu s'étale trop */
+    align-items: center; 
+    gap: 100px; 
+    max-width: 90%;
     width: 100%;
     flex-wrap: wrap;
 }
@@ -198,12 +194,12 @@ h1 {
         remove-cursor 0s linear 4.5s forwards;
 }
 
-@keyframes typing { /* Animation de "typing" */
+@keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
 
-@keyframes blink {/* Curseur clignotant */
+@keyframes blink {
     0%, 100% { border-color: transparent }
     50% { border-color: rgb(255, 149, 0) }
 }
@@ -214,9 +210,9 @@ h1 {
 
 /*****PHOTO*****/
 .intro-page img {
-    max-width: 350px; /* Taille fixe pour éviter la déformation */
+    max-width: 350px;
     width: 100%;
-    height: auto; /* Garde les proportions */
+    height: auto;
     border-radius: 50%;
     border: 6px solid rgb(255, 149, 0);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -275,10 +271,10 @@ h1 {
 }
 
 .left-column {
-    width: 45%; /* Donne 45% de largeur à la colonne gauche */
+    width: 45%; 
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espace entre les éléments */
+    gap: 20px;
     margin-left: 20px;
     align-items: center;
 }
@@ -298,10 +294,9 @@ h1 {
 }
 
 .right-column {
-    width: 45%; /* Donne 45% de largeur à la colonne droite */
+    width: 45%; 
     display: flex;
     flex-direction: column;
-    /*gap: 20px;  Espace entre les éléments */
     margin-right: 20px;
 }
 
@@ -322,15 +317,15 @@ h1 {
 .skills-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Espace entre les boîtes */
-    margin-bottom: 10px; /* Marge sous les boîtes */
+    gap: 20px; 
+    margin-bottom: 10px;
 }
 
 .skill-box {
     font-family: "Patrick Hand", cursive;
     font-size: 1.2rem;
     color: #333333;
-    flex-grow: 1; /* Chaque boîte prend une largeur égale */
+    flex-grow: 1;
     height: 150px;
     background-color: white;
     border: 1px solid #ccc;
@@ -427,7 +422,6 @@ h1 {
     transform: rotateY(180deg);
 }
 
-
 .card-back a {
     display: inline-block;
     padding: 0.5em 1em;
@@ -454,11 +448,11 @@ h1 {
 *********************/
 .page4 {
     display: flex;
-    justify-content: center; /* Centrer les deux colonnes */
+    justify-content: center;
     align-items: center;
     background-color: #b0dfdf;
     flex-wrap: wrap;
-    gap: 6rem; /* Ajoute un espace raisonnable entre les colonnes */
+    gap: 6rem;
     padding: 2rem;
 }
 
@@ -520,14 +514,13 @@ h1 {
     }
 }
 
-@media (max-width: 1199px) { /* Sur les écrans moyens, 2 cartes par ligne */
+@media (max-width: 1199px) { 
     .projects-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 768px) {
-    /* Pour les tablettes et grands smartphones */
+@media (max-width: 768px) { /*TABLETS*/
     .burger-menu {
         top: 15px;
         right: 15px;
@@ -537,16 +530,16 @@ h1 {
 
     .intro-page {
         flex-direction: column;
-        gap: 50px; /* Réduit l'espacement entre le texte et l'image */
+        gap: 50px; 
     }
 
     h1 {
-        font-size: 2.5rem; /* Réduit la taille du texte */
+        font-size: 2.5rem;
         text-align: center;
     }
 
     img {
-        max-width: 300px; /* Réduit la taille de l'image */
+        max-width: 300px;
     }
 
     .page1, .page2 {
@@ -568,25 +561,23 @@ h1 {
     }
 }
 
-@media (max-width: 480px) {
-    /* Pour les smartphones */
+@media (max-width: 480px) { /*SMARTPHONES*/
     h1 {
-        font-size: 2rem; /* Encore plus petit pour les petits écrans */
+        font-size: 2rem;
     }
 
     .intro-page {
-        gap: 30px; /* Moins d'écart */
+        gap: 30px;
     }
 
     img {
-        max-width: 250px; /* Taille de l'image plus petite sur les très petits écrans */
+        max-width: 250px;
     }
 
     .bounce-in {
-        animation: bounceIn 2s ease-out forwards; /* Accélère l'animation sur petit écran */
+        animation: bounceIn 2s ease-out forwards; 
     }
 
-    /* Menu Burger */
     .burger-menu {
         top: 10px;
         right: 10px;

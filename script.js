@@ -8,7 +8,7 @@ toggle.addEventListener("click", function() {
   toggle.textContent = isDark ? '☀️' : '🌙';
   
   if (typeof myGlobe !== 'undefined') {
-    myGlobe.backgroundColor(isDark ? "#121212" : "#b0dfdf");
+    myGlobe.backgroundColor(isDark ? "#303030" : "#b0dfdf");
   }
 });
 
@@ -32,16 +32,16 @@ const markers = [
   { lat: 35.6762, lng: 139.6503, label: "Contact", target: "page4" }
 ];
 
-// Ajout des points
+// Add markers
 myGlobe
   .pointsData(markers)
   .pointLat(d => d.lat)
   .pointLng(d => d.lng)
-  .pointAltitude(0.05)             // Taille des points
-  .pointColor(() => 'orange')      // Couleur uniforme
-  .pointRadius(0.4);               // Rayon des points
+  .pointAltitude(0.1)       
+  .pointColor(() => 'orange')      
+  .pointRadius(1);               
 
-// Ajout des labels HTML au-dessus des points
+// Add labels HTML on top markers
 myGlobe
   .htmlElementsData(markers)
   .htmlLat(d => d.lat)
@@ -50,13 +50,21 @@ myGlobe
   .htmlElement(d => {
     const labelTitle = document.createElement('div');
     labelTitle.innerText = d.label;
-    labelTitle.style.color = 'white';
-    labelTitle.style.background = 'rgba(0, 0, 0, 0.6)';
+    labelTitle.style.color = 'black';
+    labelTitle.style.background = 'white';
     labelTitle.style.padding = '4px 8px';
     labelTitle.style.borderRadius = '6px';
-    labelTitle.style.fontSize = '13px';
+    labelTitle.style.fontSize = '20px';
     labelTitle.style.fontFamily = '"Patrick Hand", cursive';
-    labelTitle.style.pointerEvents = 'none'; // évite le blocage au clic
+    labelTitle.style.pointerEvents = 'auto';
+
+    labelTitle.addEventListener('click', () => {
+      const section = document.getElementById(d.target);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+    
     return labelTitle;
   });
    
