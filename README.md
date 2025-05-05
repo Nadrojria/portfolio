@@ -1,6 +1,6 @@
 Mon portfolio :
 
-Créer dans la première moitié de ma formation, et peaufinable à l'avenir. 
+Créé dans la première moitié de ma formation, et peaufinable à l'avenir. 
 
 Adorant le basket, en particulier la NBA, j'ai décidé de mettre dans une "meta" basket tout mon portfolio.  
 -Menu : via un ballon de basket 3D. 
