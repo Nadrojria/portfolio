@@ -26,10 +26,10 @@ myGlobe.controls().enableZoom = false;
 myGlobe.controls().autoRotateSpeed = 2.3;
 
 const markers = [
-  { lat: 34.0522, lng: -118.2437, label: "Home page", target: "page1" },
-  { lat: 45.75, lng: 4.85, label: "Skills", target: "page2" },
-  { lat: 13.7563, lng: 100.5018, label: "Projects", target: "page3" },
-  { lat: 35.6762, lng: 139.6503, label: "Contact", target: "page4" }
+  { lat: 34.0522, lng: -118.2437, label: "Locker room", target: "page1" },
+  { lat: 45.75, lng: 4.85, label: "Game stats", target: "page2" },
+  { lat: 13.7563, lng: 100.5018, label: "Highlights", target: "page3" },
+  { lat: 35.6762, lng: 139.6503, label: "Draft", target: "page4" }
 ];
 
 // Add markers

@@ -274,7 +274,6 @@ h1 {
     width: 45%; 
     display: flex;
     flex-direction: column;
-    gap: 20px;
     margin-left: 20px;
     align-items: center;
 }
@@ -288,9 +287,13 @@ h1 {
 
 .left-column p {
     font-family: "Patrick Hand", cursive;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #333333;
     line-height: 1.6;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 .right-column {
@@ -308,7 +311,7 @@ h1 {
 
 .right-column p {
     font-family: "Patrick Hand", cursive;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-top: -20px;
     color: #333333;
     line-height: 1.6;
